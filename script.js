@@ -17,7 +17,9 @@
 
   function preloadFrames(){
     for(let i=1;i<=MAX_TRIES;i++){
-      const url = `${imagesPath}mouth${i}.jpg`;
+      // get 0001.png, 0002.png, etc
+      const idxStr = i.toString().padStart(4, '0');
+      const url = `${imagesPath}${idxStr}.png`;
       const img = new Image();
       img.src = url;
       img.onerror = function(){ /* stop adding further frames if missing */ };
@@ -107,7 +109,11 @@
     const idx = Math.min(count, Math.max(1, Math.round(smoothed * (count - 1)) + 1));
 
     // update image
-    const newSrc = `${imagesPath}mouth${idx}.jpg`;
+    // get 0001.png, 0002.png, etc
+    const idxStr = idx.toString().padStart(4, '0');
+    
+    const newSrc = `${imagesPath}${idxStr}.png`;
+    // console.log(newSrc);
     if(imgEl.src.indexOf(newSrc) === -1){
       imgEl.src = newSrc;
     }

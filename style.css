@@ -14,7 +14,7 @@ body{
 }
 main{display:flex;align-items:center;justify-content:center;width:100%;}
 #container{position:relative;text-align:center}
-#mouth{max-width:90vw;max-height:90vh;display:block}
+#mouth{max-width:100vw;max-height:100vh;display:block}
 #status{
   position:absolute;left:50%;transform:translateX(-50%);bottom:8px;
   background:rgba(0,0,0,0.4);padding:6px 10px;border-radius:6px;font-size:14px;
